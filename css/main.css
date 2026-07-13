@@ -254,6 +254,12 @@ main form .sub-btn {
     transition: var(--main-transition);
 }
 
+@media (max-width: 767px) {
+    main form .sub-btn {
+        padding: 15px 12px;
+    }
+}
+
 main form .sub-btn:hover {
     background-color: hsl(169, 78%, 18%);
 }
