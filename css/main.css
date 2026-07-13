@@ -1,0 +1,322 @@
+/* Start Variables */
+:root {
+    /* Primary */
+    --lighter-color: hsl(148, 38%, 91%);
+    --medium-color: hsl(169, 82%, 27%);
+    --red-color: hsl(0, 66%, 54%);
+
+    /* Neutral */
+    --Greymedium-color: hsl(186, 15%, 59%);
+    --Greydarker-color: hsl(187, 24%, 22%);
+
+    /* transition */
+    --main-transition: 0.3s;
+}
+
+body {
+    font-family: "Karla", sans-serif;
+    font-optical-sizing: auto;
+    font-style: normal;
+}
+
+/* End Variables */
+
+/* Start Global Rules */
+
+* {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+h1{
+    margin: 0;
+}
+
+a {
+    text-decoration: none;
+}
+
+/* End Global Rules */
+
+/* Start content css */
+
+body {
+    background-color: var(--lighter-color);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+main form {
+    background-color: white;
+    color: var(--Greymedium-color);
+    border-radius: 20px;
+    padding: 20px;
+    max-width: 500px;
+    width: 100%; 
+    margin: 100px 0;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+}
+
+@media (max-width: 767px) {
+    main form {
+        margin: 30px 10px;
+    }
+}
+
+main form h1 {
+    color: var(--Greydarker-color);
+}
+
+main form label::after,
+main .query-type .tit1::after {
+    content: "*";
+    color: var(--medium-color);
+    font-weight: bold;
+    margin-left: 4px;
+    padding: 3px;
+}
+
+main .query-type .radio-group .radio-option label::after,
+main form .checkbox-control label::after {
+    content: "";
+    padding: 0;
+    margin: 0;
+}
+
+main form .form-group-row {
+    display: flex;
+    justify-content: space-between;
+    gap: 16px;
+    width: 100%;
+    margin-bottom: 16px;
+}
+
+@media (max-width: 767px) {
+    main form .form-group-row {
+        flex-direction: column;
+    }
+}
+
+main form .form-group-row .form-control-name {
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+}
+
+@media (max-width: 767px) {
+    main form .form-group-row .form-control-name {
+        width: 100%;
+    }
+}
+
+main form input[type="text"],
+main form input[type="email"],
+main form textarea {
+    border: 1px solid var(--Greymedium-color);
+    border-radius: 6px;
+    width: 100%;
+    padding: 12px;
+    margin-top: 8px;
+    margin-bottom: 16px;
+    font-family: inherit;
+}
+
+
+main form .form-control-email {
+    display: flex;
+    flex-direction: column;
+}
+
+main .query-type {
+    margin-bottom: 16px;
+}
+
+main .query-type .tit1 {
+    margin-top: 12px;
+    margin-bottom: 8px;
+}
+
+main .query-type .radio-group {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+
+@media (max-width: 767px) {
+    main .query-type .radio-group {
+        flex-direction: column;
+        gap: 12px;
+    }
+}
+
+main .query-type .radio-group .radio-option {
+    border: 1px solid var(--Greymedium-color);
+    border-radius: 8px;
+    width: calc(50% - 8px);
+    cursor: pointer;
+    padding: 10px 20px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+@media (max-width: 767px) {
+    main .query-type .radio-group .radio-option {
+        width: 100%;
+    }
+}
+
+main .query-type .radio-group .radio-option:hover,
+main .query-type .radio-group .radio-option.active {
+    background-color: var(--lighter-color);
+}
+
+main .query-type .radio-group .radio-option label,
+main .query-type .radio-group .radio-option input {
+    cursor: pointer;
+    padding: 0;
+    margin: 0;
+}
+
+main form .radio-group .radio-option:hover {
+    transition: var(--main-transition);
+    border-color: var(--medium-color);
+}
+
+main form .form-control-textmsg textarea {
+    resize: vertical;
+    min-height: 100px;
+}
+
+main form .form-control-textmsg textarea:focus,
+main form .form-control-textmsg textarea:hover {
+    transition: var(--main-transition);
+    border-color: var(--medium-color);
+    outline: none;
+}
+
+main form .checkbox-control {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-top: 15px;
+    margin-bottom: 24px;
+    width: 100%;
+}
+
+main form .checkbox-err  {
+    position: relative;
+    margin-bottom: 10px;
+    bottom: 15px;
+}
+
+main form .checkbox-control label {
+    cursor: pointer;
+}
+
+main form .checkbox-control input {
+    margin: 0;
+    color: var(--medium-color);
+    cursor: pointer;
+}
+
+main form input[type="radio"],
+main form input[type="checkbox"] {
+    accent-color: var(--medium-color);
+    width: 18px;
+    height: 18px;
+    cursor: pointer;
+}
+
+main form .sub-btn {
+    width: 100%;
+    border-radius: 6px;
+    padding: 12px;
+    font-weight: bold;
+    color: white;
+    background-color: var(--medium-color);
+    border: none;
+    cursor: pointer;
+    transition: var(--main-transition);
+}
+
+main form .sub-btn:hover {
+    background-color: hsl(169, 78%, 18%);
+}
+
+main form input:focus,
+main form input:hover {
+    transition: var(--main-transition);
+    border-color: var(--medium-color);
+    outline: none;
+}
+
+main form input.invalid-input,
+main form textarea.invalid-input {
+    border-color: var(--red-color);
+}
+
+main form .error-msg {
+    display: none;
+    color: var(--red-color);
+}
+
+main form .valid-email {
+    display: none;
+    color: var(--red-color);
+}
+
+.success-message {
+    position: fixed;
+    top: -100px;
+    left: 50%;
+    transform: translateX(-50%);
+    opacity: 0;
+    transition: top 0.5s ease, opacity 0.4s ease;
+    background-color: var(--Greydarker-color);
+    color: white;
+    padding: 16px 24px;
+    border-radius: 12px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+    max-width: 450px;
+    width: 90%;
+}
+
+.success-message h2 {
+    margin: 0 0 15px 0;
+    align-items: center;
+    font-size: 30px;
+    gap: 8px;
+}
+
+.success-message h2::before {
+    content: url(/assets/images/icon-success-check.svg);
+    margin-right: 10px;
+}
+
+.success-message p {
+    margin: 0;
+    color: var(--lighter-color);
+}
+
+.success-message.show {
+    top: 25px;
+    opacity: 1;
+}
+
+/* End content css */
