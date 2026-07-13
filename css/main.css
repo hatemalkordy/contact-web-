@@ -311,7 +311,7 @@ main form .valid-email {
 }
 
 .success-message h2::before {
-    content: url(/assets/images/icon-success-check.svg);
+    content: url(../assets/images/icon-success-check.svg);
     margin-right: 10px;
 }
 
